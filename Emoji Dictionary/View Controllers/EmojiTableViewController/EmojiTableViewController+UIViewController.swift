@@ -10,7 +10,7 @@
 extension EmojiTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        emojis = loadEmojis()
+        emojis = storageManager.load() ?? loadEmojis()
         navigationItem.leftBarButtonItem = editButtonItem
     }
 }

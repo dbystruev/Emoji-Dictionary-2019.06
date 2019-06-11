@@ -10,5 +10,10 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     let cellManager = CellManager()
-    var emojis: [Emoji]!
+    var emojis: [Emoji]! {
+        didSet {
+            storageManager.save(emojis: emojis)
+        }
+    }
+    let storageManager = StorageManager()
 }
